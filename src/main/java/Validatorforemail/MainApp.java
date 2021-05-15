@@ -1,3 +1,5 @@
+package Validatorforemail;
+
 import Validatorforemail.Node;
 import Validatorforemail.Validator;
 
