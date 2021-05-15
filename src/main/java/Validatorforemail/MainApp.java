@@ -1,8 +1,5 @@
 package Validatorforemail;
 
-import Validatorforemail.Node;
-import Validatorforemail.Validator;
-
 public class MainApp {
     public static void main(String[] args) {
 
