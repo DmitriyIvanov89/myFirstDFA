@@ -15,6 +15,7 @@ public class DFAValidator {
         State s7 = new State("S7", true);
         State s8 = new State("S8", true);
         State s9 = new State("S9", true);
+        startState = s0;
 
         addTransitionsByAllLetters(s0, s1);
         s1.addTransition('.', s0);
@@ -52,5 +53,5 @@ public class DFAValidator {
             from.addTransition(letter, to);
         }
     }
-    
+
 }
