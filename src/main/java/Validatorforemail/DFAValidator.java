@@ -52,4 +52,5 @@ public class DFAValidator {
             from.addTransition(letter, to);
         }
     }
+    
 }
