@@ -29,7 +29,6 @@ public class DFAValidator {
         addTransitionsByAllLetters(s6, s7);
         addTransitionsByAllLetters(s7, s8);
         addTransitionsByAllLetters(s8, s9);
-
     }
 
     public boolean validate(String str) {
