@@ -16,9 +16,11 @@ public class MyFirstDFA {
         dfaValidator.init();
 
         if (dfaValidator.validate(email)) {
-            logger.log(Level.INFO, "Completed successfully. Correct email");
+            logger.log(Level.INFO, "Completed successfully");
+            System.out.println("Correct email");
         } else {
             logger.log(Level.INFO, "Received wrong email");
+            System.out.println("Wrong email");
         }
     }
 }
