@@ -11,6 +11,20 @@
 		{"id" : "S8","finite" : "true"},
 		{"id" : "S9","finite" : "true"}
 	],
-	"startState" : "S0"
+	"startId" : "S0",
+	"transitions" : [
+		{"from" :  "S0","by": "A","to": "S1"},
+		{"from" :  "S1","by": ".","to": "S0"},
+		{"from" :  "S1","by": "A","to": "S1"},
+		{"from" :  "S1","by": "@","to": "S2"},
+		{"from" :  "S2","by": "A","to": "S3"},
+		{"from" :  "S3","by": "A","to": "S3"},
+		{"from" :  "S3","by": ".","to": "S4"},
+		{"from" :  "S4","by": "A","to": "S5"},
+		{"from" :  "S5","by": "A","to": "S6"},
+		{"from" :  "S6","by": "A","to": "S7"},
+		{"from" :  "S7","by": "A","to": "S8"},
+		{"from" :  "S8","by": "A","to": "S9"}
+	]
 }
 

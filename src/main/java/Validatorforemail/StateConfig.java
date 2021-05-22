@@ -6,19 +6,25 @@ import java.util.List;
 public class StateConfig {
 
     private List<JsonState> stateDefinition;
-    private String startState;
+    private List<Transitions> transitions;
+    private String startId;
 
-    public StateConfig(List<JsonState> stateDefinition, String startState) {
+    public StateConfig(List<JsonState> stateDefinition, List<Transitions> transitions, String startId) {
         this.stateDefinition = new ArrayList<JsonState>();
-        this.startState = startState;
+        this.transitions = new ArrayList<Transitions>();
+        this.startId = startId;
     }
 
-    public String getStartState() {
-        return startState;
+    public String getStartId() {
+        return startId;
     }
 
     public List<JsonState> getStateDefinition() {
         return stateDefinition;
+    }
+
+    public List<Transitions> getTransitions() {
+        return transitions;
     }
 
     @Override

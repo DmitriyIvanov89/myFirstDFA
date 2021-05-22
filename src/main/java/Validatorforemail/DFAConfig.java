@@ -8,7 +8,7 @@ public class DFAConfig {
     public StateConfig initStateFromJson() {
 
         Gson gson = new Gson();
-        try (FileReader reader = new FileReader("d:\\my\\myFirstDFA\\src\\main\\resources\\dfa.json")) {
+        try (FileReader reader = new FileReader("E:\\IT\\JAVA\\my_project\\\\dfa_repo\\src\\main\\resources\\dfa.json")) {
             StateConfig stateConfig = gson.fromJson(reader, StateConfig.class);
             return stateConfig;
         } catch (Exception e) {
