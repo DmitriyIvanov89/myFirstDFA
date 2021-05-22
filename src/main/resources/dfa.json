@@ -1,0 +1,16 @@
+{
+	"stateDefinition" : [
+		{"id" : "S0","finite" : "false"},
+		{"id" : "S1","finite" : "false"},
+		{"id" : "S2","finite" : "false"},
+		{"id" : "S3","finite" : "false"},
+		{"id" : "S4","finite" : "false"},
+		{"id" : "S5","finite" : "false"},
+		{"id" : "S6","finite" : "true"},
+		{"id" : "S7","finite" : "true"},
+		{"id" : "S8","finite" : "true"},
+		{"id" : "S9","finite" : "true"}
+	],
+	"startState" : "S0"
+}
+
