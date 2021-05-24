@@ -1,11 +1,18 @@
 package Validatorforemail;
 
+import java.util.List;
+import java.util.Map;
+
 public class DFAValidator {
 
     private State startState;
+    private Map<DFAConfig.JsonState, DFAConfig.JsonTransitions> initialDFA;
 
     public DFAValidator(DFAConfig config) {
-        
+        //startState = config.getStartId();
+        for (DFAConfig.JsonTransitions tranzit : config.getTransitions()){
+            System.out.println(tranzit);
+        }
     }
 
     public boolean validate(String str) {

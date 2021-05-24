@@ -4,15 +4,19 @@ public class MyFirstDFA {
 
     public static void main(String[] args) {
 
-        DFAConfigReader dfaConfig = new DFAConfigReader();
-        DFAConfig stateConfig = dfaConfig.initStateFromJson();
+        DFAConfigReader dfaConfig = new DFAConfigReader("d:\\my\\myFirstDFA\\src\\main\\resources\\dfa.json");
+        DFAConfig stateConfig = dfaConfig.initDFAFromJson();
 
-        System.out.println(stateConfig.getStateDefinition().toString());
-        System.out.println("Start id:" + stateConfig.getStartId().toString());
-        System.out.println("Transitions:" + stateConfig.getTransitions().toString());
+        System.out.println("Start id: " + stateConfig.getStartId().toString());
 
-//        DFAbyJson dfAbyJson = new DFAbyJson();
-//        dfAbyJson.init(stateConfig);
+        for (DFAConfig.JsonState states : stateConfig.getStateDefinition()) {
+            System.out.println(states);
+        }
+
+        for (DFAConfig.JsonTransitions tranzit : stateConfig.getTransitions()) {
+            System.out.println(tranzit);
+        }
+
 
     }
 }
