@@ -10,8 +10,8 @@ public class DFAValidator {
 
     public DFAValidator(DFAConfig config) {
         //startState = config.getStartId();
-        for (DFAConfig.JsonTransitions tranzit : config.getTransitions()){
-            System.out.println(tranzit);
+        for (DFAConfig.JsonState state : config.getStateDefinition()) {
+
         }
     }
 
