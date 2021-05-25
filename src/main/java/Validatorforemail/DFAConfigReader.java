@@ -1,7 +1,9 @@
 package Validatorforemail;
 
 import com.google.gson.Gson;
-import java.io.FileReader;
+
+import java.io.*;
+import java.util.Objects;
 
 public class DFAConfigReader {
 
@@ -11,15 +13,9 @@ public class DFAConfigReader {
         this.configPath = configPath;
     }
 
-    public DFAConfig ReadDFAFromJson() {
-        Gson gson = new Gson();
+    public DFAConfig ReadDFAFromJson() throws IOException {
         try (FileReader reader = new FileReader(configPath)) {
-            DFAConfig dfaConfig = gson.fromJson(reader, DFAConfig.class);
-            return dfaConfig;
-        } catch (Exception e) {
-            System.out.println("Wrong parsing!" + e.toString());
+            return new Gson().fromJson(reader, DFAConfig.class);
         }
-        return null;
     }
-
 }

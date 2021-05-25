@@ -1,14 +1,16 @@
 package Validatorforemail;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class DFAValidator {
 
     String startState;
-    Map<DFAConfig.JsonState,>
+    Map<DFAConfig.JsonState, DFAConfig.Transitions> init;
 
     public DFAValidator(DFAConfig config) {
-        startState = config.getStartId();
+        this.init = new HashMap<>();
+        this.startState = config.getStartId();
         for (int i = 0; i < config.getTransitions().size(); i++) {
 
         }
