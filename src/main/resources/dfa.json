@@ -1,5 +1,5 @@
 {
-	"stateDefinition" : [
+	"stateDefinition":[
 		{"id" : "S0","finite" : "false"},
 		{"id" : "S1","finite" : "false"},
 		{"id" : "S2","finite" : "false"},
@@ -13,18 +13,18 @@
 	],
 	"startId" : "S0",
 	"transitions" : [
-		{"from" :  "S0","by": "A","to": "S1"},
-		{"from" :  "S1","by": ".","to": "S0"},
-		{"from" :  "S1","by": "A","to": "S1"},
-		{"from" :  "S1","by": "@","to": "S2"},
-		{"from" :  "S2","by": "A","to": "S3"},
-		{"from" :  "S3","by": "A","to": "S3"},
-		{"from" :  "S3","by": ".","to": "S4"},
-		{"from" :  "S4","by": "A","to": "S5"},
-		{"from" :  "S5","by": "A","to": "S6"},
-		{"from" :  "S6","by": "A","to": "S7"},
-		{"from" :  "S7","by": "A","to": "S8"},
-		{"from" :  "S8","by": "A","to": "S9"}
+		{"from" : "S0","symbol" : "A","to" : "S1"},
+		{"from" : "S1","symbol" : ".","to" : "S0"},
+		{"from" : "S1","symbol" : "A","to" : "S1"},
+		{"from" : "S1","symbol" : "@","to" : "S2"},
+		{"from" : "S2","symbol" : "A","to" : "S3"},
+		{"from" : "S3","symbol" : "A","to" : "S3"},
+		{"from" : "S3","symbol" : ".","to" : "S4"},
+		{"from" : "S4","symbol" : "A","to" : "S5"},
+		{"from" : "S5","symbol" : "A","to" : "S6"},
+		{"from" : "S6","symbol" : "A","to" : "S7"},
+		{"from" : "S7","symbol" : "A","to" : "S8"},
+		{"from" : "S8","symbol" : "A","to" : "S9"}
 	]
 }
 

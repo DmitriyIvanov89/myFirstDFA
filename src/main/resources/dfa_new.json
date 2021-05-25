@@ -14,79 +14,54 @@
 	"startState":
 		{"id":"S0","finite":"false"},
 
-	"transitions":[
+	"transitions": [
 
-		{"from":
-			{"id":"S0","finite":"false"}},
+		{"from": {"id":"S0","finite":"false"}},
 		{"symbol":"A"},
-		{"to":
-			{"id":"S1","finite":"false"}},
+		{"to": {"id":"S1","finite":"false"}},
 
-		{"from":
-			{"id":"S1","finite":"false"}},
+		{"from": {"id":"S1","finite":"false"}},
 		{"symbol":"A"},
-		{"to":
-			{"id":"S1","finite":"false"}},
+		{"to": {"id":"S1","finite":"false"}},
 
-		{"from":
-			{"id":"S1","finite":"false"}},
+		{"from": {"id":"S1","finite":"false"}},
 		{"symbol":"."},
-		{"to":
-			{"id":"S0","finite":"false"}},
+		{"to": {"id":"S0","finite":"false"}},
 
-		{"from":
-			{"id":"S1","finite":"false"}},
+		{"from": {"id":"S1","finite":"false"}},
 		{"symbol":"@"},
-		{"to":
-			{"id":"S2","finite":"false"}},
+		{"to": {"id":"S2","finite":"false"}},
 
-		{"from":
-			{"id":"S2","finite":"false"}},
+		{"from": {"id":"S2","finite":"false"}},
 		{"symbol":"A"},
-		{"to":
-			{"id":"S3","finite":"false"}},
+		{"to": {"id":"S3","finite":"false"}},
 
-		{"from":
-			{"id":"S3","finite":"false"}},
+		{"from": {"id":"S3","finite":"false"}},
 		{"symbol":"A"},
-		{"to":
-			{"id":"S3","finite":"false"}},
+		{"to": {"id":"S3","finite":"false"}},
 
-		{"from":
-			{"id":"S3","finite":"false"}},
+		{"from": {"id":"S3","finite":"false"}},
 		{"symbol":"."},
-		{"to":
-			{"id":"S4","finite":"false"}},
+		{"to": {"id":"S4","finite":"false"}},
 
-		{"from":
-			{"id":"S4","finite":"false"}},
+		{"from": {"id":"S4","finite":"false"}},
 		{"symbol":"A"},
-		{"to":
-			{"id":"S5","finite":"false"}},
+		{"to": {"id":"S5","finite":"false"}},
 
-		{"from":
-			{"id":"S5","finite":"false"}},
+		{"from": {"id":"S5","finite":"false"}},
 		{"symbol":"A"},
-		{"to":
-			{"id":"S6","finite":"true"}},
+		{"to": {"id":"S6","finite":"true"}},
 
-		{"from":
-			{"id":"S6","finite":"true"}},
+		{"from": {"id":"S6","finite":"true"}},
 		{"symbol":"A"},
-		{"to":
-			{"id":"S7","finite":"true"}},
+		{"to": {"id":"S7","finite":"true"}},
 
-		{"from":
-			{"id":"S7","finite":"true"}},
+		{"from": {"id":"S7","finite":"true"}},
 		{"symbol":"A"},
-		{"to":
-			{"id":"S8","finite":"true"}},
+		{"to": {"id":"S8","finite":"true"}},
 
-		{"from":
-			{"id":"S8","finite":"true"}},
+		{"from": {"id":"S8","finite":"true"}},
 		{"symbol":"A"},
-		{"to":
-			{"id":"S9","finite":"true"}}
-]
-
+		{"to": {"id":"S9","finite":"true"}}
+	]
 }

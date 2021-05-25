@@ -1,38 +1,43 @@
 package Validatorforemail;
 
-import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 public class DFAConfig {
 
-    private List<JsonState> stateDefinition;
-    private List<JsonTransitions> transitions;
+    private List<State> stateDefinition;
+    private List<Transitions> transitions;
     private String startId;
+
+    public DFAConfig(List<State> stateDefinition, List<Transitions> transitions) {
+        this.stateDefinition = new ArrayList<State>();
+        this.transitions = new ArrayList<Transitions>();
+    }
 
     public String getStartId() {
         return startId;
     }
 
-    public List<JsonState> getStateDefinition() {
+    public List<State> getStateDefinition() {
         return stateDefinition;
     }
 
-    public List<JsonTransitions> getTransitions() {
+    public List<Transitions> getTransitions() {
         return transitions;
     }
 
-    public class JsonTransitions {
+    public class Transitions {
 
-        JsonState from;
-        JsonState to;
-        Character symbol;
+        private String from;
+        private Character symbol;
+        private String to;
 
-        public JsonState getFrom() {
+        public String getFrom() {
             return from;
         }
 
-        public JsonState getTo() {
+        public String getTo() {
             return to;
         }
 
@@ -42,19 +47,15 @@ public class DFAConfig {
 
         @Override
         public String toString() {
-            return String.format("State from: %s, by: %s, to: %s", from, symbol, to);
+            return String.format("State from: %s, by symbol: %s, to: %s", from, symbol, to);
         }
     }
 
-    public class JsonState {
+    public class State {
 
         private String id;
         private boolean finite;
-        private Map<JsonState, Character> jsTransitions;
-
-        public JsonState(Map<Character, JsonState> transitions) {
-            this.jsTransitions = new HashMap<JsonState, Character>();
-        }
+        private Map<State, Character> jsTransitions;
 
         public String getId() {
             return id;
@@ -64,11 +65,11 @@ public class DFAConfig {
             return finite;
         }
 
-        public Map<JsonState, Character> getJsTransitions() {
+        public Map<State, Character> getJsTransitions() {
             return jsTransitions;
         }
 
-        public void addTransition(JsonState nextState, Character symbol) {
+        public void addTransition(State nextState, Character symbol) {
             this.jsTransitions.put(nextState, symbol);
         }
 

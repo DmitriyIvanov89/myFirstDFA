@@ -11,7 +11,7 @@ public class DFAConfigReader {
         this.configPath = configPath;
     }
 
-    public DFAConfig initDFAFromJson() {
+    public DFAConfig ReadDFAFromJson() {
         Gson gson = new Gson();
         try (FileReader reader = new FileReader(configPath)) {
             DFAConfig dfaConfig = gson.fromJson(reader, DFAConfig.class);
