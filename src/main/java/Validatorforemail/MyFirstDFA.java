@@ -9,7 +9,7 @@ public class MyFirstDFA {
 
         System.out.println("Start state: " + config.getStartId().toString());
 
-        for (DFAConfig.State states : config.getStateDefinition()) {
+        for (DFAConfig.JsonState states : config.getStateDefinition()) {
             System.out.println(states);
         }
 

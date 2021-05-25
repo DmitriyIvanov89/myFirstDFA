@@ -1,11 +1,11 @@
 package Validatorforemail;
 
-import java.util.HashMap;
 import java.util.Map;
 
 public class DFAValidator {
 
     String startState;
+    Map<DFAConfig.JsonState,>
 
     public DFAValidator(DFAConfig config) {
         startState = config.getStartId();

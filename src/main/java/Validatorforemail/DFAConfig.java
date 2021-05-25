@@ -6,20 +6,21 @@ import java.util.Map;
 
 public class DFAConfig {
 
-    private List<State> stateDefinition;
+    private List<JsonState> stateDefinition;
     private List<Transitions> transitions;
     private String startId;
 
-    public DFAConfig(List<State> stateDefinition, List<Transitions> transitions) {
-        this.stateDefinition = new ArrayList<State>();
+    public DFAConfig(List<JsonState> stateDefinition, List<Transitions> transitions, String startId) {
+        this.stateDefinition = new ArrayList<JsonState>();
         this.transitions = new ArrayList<Transitions>();
+        this.startId = startId;
     }
 
     public String getStartId() {
         return startId;
     }
 
-    public List<State> getStateDefinition() {
+    public List<JsonState> getStateDefinition() {
         return stateDefinition;
     }
 
@@ -51,11 +52,11 @@ public class DFAConfig {
         }
     }
 
-    public class State {
+    public class JsonState {
 
         private String id;
         private boolean finite;
-        private Map<State, Character> jsTransitions;
+        private Map<JsonState, Character> jsTransitions;
 
         public String getId() {
             return id;
@@ -65,11 +66,11 @@ public class DFAConfig {
             return finite;
         }
 
-        public Map<State, Character> getJsTransitions() {
+        public Map<JsonState, Character> getJsTransitions() {
             return jsTransitions;
         }
 
-        public void addTransition(State nextState, Character symbol) {
+        public void addTransition(JsonState nextState, Character symbol) {
             this.jsTransitions.put(nextState, symbol);
         }
 
