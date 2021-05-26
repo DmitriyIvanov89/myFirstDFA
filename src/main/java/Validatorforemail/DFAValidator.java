@@ -6,17 +6,10 @@ import java.util.Map;
 public class DFAValidator {
 
     private String startStateId;
-    private Map<DFAConfig.JsonState, DFAConfig.JsonState> dfa;
+    private Map<DFAConfig.JsonState, Character> dfa;
 
     public DFAValidator(DFAConfig config) {
-        this.startStateId = config.getStartId();
-        this.dfa = new HashMap<>();
-
-        for (DFAConfig.JsonState state : config.getStateDefinition()) {
-            dfa.put(state, null);
-        }
-
-
+        for ()
     }
 
     public String getStartStateId() {
