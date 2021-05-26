@@ -46,11 +46,6 @@ public class DFAConfig {
         public Character getSymbol() {
             return symbol;
         }
-
-        @Override
-        public String toString() {
-            return String.format("State from: %s, by symbol: %s, to: %s", from, symbol, to);
-        }
     }
 
     public class JsonState {
@@ -79,11 +74,6 @@ public class DFAConfig {
 
         public JsonState getTransition(Character symbol) {
             return jsTransitions.get(symbol);
-        }
-
-        @Override
-        public String toString() {
-            return String.format("id: %s, finite: %s", id, finite);
         }
     }
 }
