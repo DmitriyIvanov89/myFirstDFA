@@ -1,6 +1,7 @@
 package Validatorforemail;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -56,7 +57,13 @@ public class DFAConfig {
 
         private String id;
         private boolean finite;
-        private Map<JsonState, Character> jsTransitions;
+        private Map<Character, JsonState> jsTransitions;
+
+        public JsonState(String id, boolean finite, Map<Character, JsonState> jsTransitions) {
+            this.id = id;
+            this.finite = finite;
+            this.jsTransitions = new HashMap<>();
+        }
 
         public String getId() {
             return id;
@@ -66,12 +73,12 @@ public class DFAConfig {
             return finite;
         }
 
-        public Map<JsonState, Character> getJsTransitions() {
-            return jsTransitions;
+        public void addTransition(Character symbol, JsonState nextState) {
+            this.jsTransitions.put(symbol, nextState);
         }
 
-        public void addTransition(JsonState nextState, Character symbol) {
-            this.jsTransitions.put(nextState, symbol);
+        public JsonState getTransition(Character symbol) {
+            return jsTransitions.get(symbol);
         }
 
         @Override

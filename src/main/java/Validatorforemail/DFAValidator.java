@@ -5,15 +5,22 @@ import java.util.Map;
 
 public class DFAValidator {
 
-    String startState;
-    Map<DFAConfig.JsonState, DFAConfig.Transitions> init;
+    private String startStateId;
+    private Map<DFAConfig.JsonState, DFAConfig.JsonState> dfa;
 
     public DFAValidator(DFAConfig config) {
-        this.init = new HashMap<>();
-        this.startState = config.getStartId();
-        for (int i = 0; i < config.getTransitions().size(); i++) {
+        this.startStateId = config.getStartId();
+        this.dfa = new HashMap<>();
 
+        for (DFAConfig.JsonState state : config.getStateDefinition()) {
+            dfa.put(state, null);
         }
+
+
+    }
+
+    public String getStartStateId() {
+        return startStateId;
     }
 
     private void addTransitionsByAllLetters(State from, State to) {
