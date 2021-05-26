@@ -1,19 +1,22 @@
 package Validatorforemail;
 
-import java.util.HashMap;
 import java.util.Map;
 
 public class DFAValidator {
 
-    private String startStateId;
-    private Map<DFAConfig.JsonState, Character> dfa;
+    private DFAConfig.JsonState startState;
+    private Map<DFAConfig.JsonState, DFAConfig.JsonState> dfa;
 
     public DFAValidator(DFAConfig config) {
-        for ()
+
     }
 
-    public String getStartStateId() {
-        return startStateId;
+    public DFAConfig.JsonState getStartState() {
+        return startState;
+    }
+
+    public Map<DFAConfig.JsonState, DFAConfig.JsonState> getDfa() {
+        return dfa;
     }
 
     private void addTransitionsByAllLetters(State from, State to) {
