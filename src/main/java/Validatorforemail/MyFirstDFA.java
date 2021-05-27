@@ -9,6 +9,5 @@ public class MyFirstDFA {
         DFAConfigReader reader = new DFAConfigReader("d:\\my\\myFirstDFA\\src\\main\\resources\\dfa.json");
         DFAConfig config = reader.ReadDFAFromJson();
 
-
     }
 }

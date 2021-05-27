@@ -9,6 +9,8 @@ public class DFAValidator {
 
     public DFAValidator(DFAConfig config) {
 
+
+
     }
 
     public DFAConfig.JsonState getStartState() {
