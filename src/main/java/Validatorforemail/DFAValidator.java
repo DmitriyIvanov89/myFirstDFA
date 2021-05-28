@@ -2,6 +2,7 @@ package Validatorforemail;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Stack;
 
 public class DFAValidator {
 
@@ -14,6 +15,7 @@ public class DFAValidator {
         for (DFAConfig.State state : config.getStateDefinition()) {
             dfa.put(state.getId(), state);
         }
+
         this.startState = dfa.get(config.getStartId());
 
         for (DFAConfig.Transitions tranzit : config.getTransitions()) {

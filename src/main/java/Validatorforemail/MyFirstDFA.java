@@ -15,5 +15,6 @@ public class MyFirstDFA {
         for (Map.Entry<String, DFAConfig.State> map : dfaValidator.getDfa().entrySet()) {
             System.out.println(map);
         }
+
     }
 }
