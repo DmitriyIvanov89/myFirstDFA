@@ -69,7 +69,7 @@ public class DFAConfig {
         }
 
         public void addTransition(Character symbol, State nextState) {
-            this.transition.put(symbol, nextState);
+            transition.put(symbol, nextState);
         }
 
         public State getTransition(Character symbol) {
