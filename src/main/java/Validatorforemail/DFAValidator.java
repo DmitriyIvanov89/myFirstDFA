@@ -1,23 +1,35 @@
 package Validatorforemail;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class DFAValidator {
 
     private DFAConfig.State startState;
-    private Map<DFAConfig.State, DFAConfig.State> dfa;
+    private Map<String, DFAConfig.State> dfa;
 
     public DFAValidator(DFAConfig config) {
+        this.dfa = new HashMap<>();
 
+        for (DFAConfig.State state : config.getStateDefinition()) {
+            dfa.put(state.getId(), state);
+        }
+        this.startState = dfa.get(config.getStartId());
+
+        for (DFAConfig.Transitions tranzit : config.getTransitions()) {
+
+        }
+
+    }
+
+    public Map<String, DFAConfig.State> getDfa() {
+        return dfa;
     }
 
     public DFAConfig.State getStartState() {
         return startState;
     }
 
-    public Map<DFAConfig.State, DFAConfig.State> getDfa() {
-        return dfa;
-    }
 
 //    private void addTransitionsByAllLetters(State from, State to) {
 //        for (char letter = 'A'; letter <= 'Z'; letter++) {

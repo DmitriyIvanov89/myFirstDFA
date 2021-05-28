@@ -54,7 +54,7 @@ public class DFAConfig {
         private boolean finite;
         private Map<Character, State> transition;
 
-        public State(String id, boolean finite, Map<Character, State> jsTransitions) {
+        public State(String id, boolean finite, Map<Character, State> transition) {
             this.id = id;
             this.finite = finite;
             this.transition = new HashMap<>();
@@ -78,7 +78,7 @@ public class DFAConfig {
 
         @Override
         public String toString() {
-            return String.format("State:%s", id);
+            return String.format("%s", id);
         }
     }
 }
