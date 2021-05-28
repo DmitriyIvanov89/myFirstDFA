@@ -17,9 +17,8 @@ public class DFAValidator {
         this.startState = dfa.get(config.getStartId());
 
         for (DFAConfig.Transitions tranzit : config.getTransitions()) {
-
+            dfa.get(tranzit.getFrom()).addTransition(tranzit.getSymbol(), dfa.get(tranzit.getTo()));
         }
-
     }
 
     public Map<String, DFAConfig.State> getDfa() {
