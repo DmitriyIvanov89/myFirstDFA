@@ -7,12 +7,12 @@ import java.util.Map;
 
 public class DFAConfig {
 
-    private List<JsonState> stateDefinition;
+    private List<State> stateDefinition;
     private List<Transitions> transitions;
     private String startId;
 
-    public DFAConfig(List<JsonState> stateDefinition, List<Transitions> transitions, String startId) {
-        this.stateDefinition = new ArrayList<JsonState>();
+    public DFAConfig(List<State> stateDefinition, List<Transitions> transitions, String startId) {
+        this.stateDefinition = new ArrayList<State>();
         this.transitions = new ArrayList<Transitions>();
         this.startId = startId;
     }
@@ -21,7 +21,7 @@ public class DFAConfig {
         return startId;
     }
 
-    public List<JsonState> getStateDefinition() {
+    public List<State> getStateDefinition() {
         return stateDefinition;
     }
 
@@ -48,16 +48,16 @@ public class DFAConfig {
         }
     }
 
-    public class JsonState {
+    public class State {
 
         private String id;
         private boolean finite;
-        private Map<Character, JsonState> jsTransitions;
+        private Map<Character, State> transition;
 
-        public JsonState(String id, boolean finite, Map<Character, JsonState> jsTransitions) {
+        public State(String id, boolean finite, Map<Character, State> jsTransitions) {
             this.id = id;
             this.finite = finite;
-            this.jsTransitions = new HashMap<>();
+            this.transition = new HashMap<>();
         }
 
         public String getId() {
@@ -68,12 +68,17 @@ public class DFAConfig {
             return finite;
         }
 
-        public void addTransition(Character symbol, JsonState nextState) {
-            this.jsTransitions.put(symbol, nextState);
+        public void addTransition(Character symbol, State nextState) {
+            this.transition.put(symbol, nextState);
         }
 
-        public JsonState getTransition(Character symbol) {
-            return jsTransitions.get(symbol);
+        public State getTransition(Character symbol) {
+            return transition.get(symbol);
+        }
+
+        @Override
+        public String toString() {
+            return String.format("State:%s", id);
         }
     }
 }
