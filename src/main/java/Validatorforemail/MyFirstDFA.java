@@ -8,10 +8,17 @@ public class MyFirstDFA {
 
     public static void main(String[] args) throws IOException {
 
+        String email = "A..AA@A.AA";
+
         DFAConfigReader reader = new DFAConfigReader(CONFIG_PATH);
         DFAConfig config = reader.ReadDFAFromJson();
 
         DFAValidator dfaValidator = new DFAValidator(config);
 
+        if (!dfaValidator.validate(email)) {
+            System.out.println("Wrong email!");
+        } else {
+            System.out.println("Correct email");
+        }
     }
 }
