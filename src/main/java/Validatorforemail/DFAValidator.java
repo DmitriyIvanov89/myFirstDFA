@@ -22,11 +22,19 @@ public class DFAValidator {
         }
     }
 
-    public Map<String, State> getDfa() {
-        return dfa;
-    }
-
     public State getStartState() {
         return startState;
+    }
+
+    public boolean validate(String str) {
+        State curState = startState;
+
+        for (int i = 0; i < str.length(); i++) {
+            curState = curState.getTransition(str.charAt(i));
+            if (curState == null) {
+                return false;
+            }
+        }
+        return curState.isFinite();
     }
 }

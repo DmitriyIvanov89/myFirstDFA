@@ -12,6 +12,6 @@ public class MyFirstDFA {
         DFAConfig config = reader.ReadDFAFromJson();
 
         DFAValidator dfaValidator = new DFAValidator(config);
-        
+
     }
 }
