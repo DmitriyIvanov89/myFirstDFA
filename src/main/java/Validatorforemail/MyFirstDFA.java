@@ -1,19 +1,17 @@
 package Validatorforemail;
 
 import java.io.IOException;
-import java.util.Map;
 
 public class MyFirstDFA {
 
+    private final static String CONFIG_PATH = "d:\\my\\myFirstDFA\\src\\main\\resources\\dfa.json";
+
     public static void main(String[] args) throws IOException {
 
-        DFAConfigReader reader = new DFAConfigReader("d:\\my\\myFirstDFA\\src\\main\\resources\\dfa.json");
+        DFAConfigReader reader = new DFAConfigReader(CONFIG_PATH);
         DFAConfig config = reader.ReadDFAFromJson();
 
         DFAValidator dfaValidator = new DFAValidator(config);
-        for (Map.Entry<String, DFAConfig.State> map : dfaValidator.getDfa().entrySet()) {
-            System.out.println(map);
-        }
-
+        
     }
 }

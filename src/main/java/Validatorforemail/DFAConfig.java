@@ -1,18 +1,16 @@
 package Validatorforemail;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class DFAConfig {
 
-    private List<State> stateDefinition;
+    private List<DFAState> stateDefinition;
     private List<Transitions> transitions;
     private String startId;
 
-    public DFAConfig(List<State> stateDefinition, List<Transitions> transitions, String startId) {
-        this.stateDefinition = new ArrayList<State>();
+    public DFAConfig(List<DFAState> stateDefinition, List<Transitions> transitions, String startId) {
+        this.stateDefinition = new ArrayList<DFAState>();
         this.transitions = new ArrayList<Transitions>();
         this.startId = startId;
     }
@@ -21,7 +19,7 @@ public class DFAConfig {
         return startId;
     }
 
-    public List<State> getStateDefinition() {
+    public List<DFAState> getStateDefinition() {
         return stateDefinition;
     }
 
@@ -48,16 +46,14 @@ public class DFAConfig {
         }
     }
 
-    public class State {
+    public class DFAState {
 
         private String id;
         private boolean finite;
-        private Map<Character, State> transition;
 
-        public State(String id, boolean finite) {
+        public DFAState(String id, boolean finite) {
             this.id = id;
             this.finite = finite;
-            this.transition = new HashMap<>();
         }
 
         public String getId() {
@@ -66,19 +62,6 @@ public class DFAConfig {
 
         public boolean isFinite() {
             return finite;
-        }
-
-        public void addTransition(Character symbol, State nextState) {
-            transition.put(symbol, nextState);
-        }
-
-        public State getTransition(Character symbol) {
-            return transition.get(symbol);
-        }
-
-        @Override
-        public String toString() {
-            return String.format("%s", id);
         }
     }
 }
